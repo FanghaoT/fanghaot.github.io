@@ -26,20 +26,19 @@ To run a simulation using a script in PSIM, follow these steps:
 
 2. Define the parameters for your simulation. For example:
 
-folder = "C:\Users\Fanghao\Documents\ResearchTopic\20230626PSIM\"
+"folder = "C:\Users\Fanghao\Documents\ResearchTopic\20230626PSIM\"
 f = 50k  // switching frequency
 Vin = 100
 L = 100u
 C = 1u
-R = 10
+R = 10"
 
 3. Use the Simulate function to run the simulation. The syntax for the Simulate function is as follows:
-'''python
-Simulate(SchematicFilePath, SimviewFilePath, SimulationOptions, ReturnGraph)
+
+"Simulate(SchematicFilePath, SimviewFilePath, SimulationOptions, ReturnGraph)"
 
 For example:
-'''python
-Simulate(folder+"buck.psimsch", folder+"buck.smv", TotalTime=6m, PrintTime=0.1m, g1)
+"Simulate(folder+"buck.psimsch", folder+"buck.smv", TotalTime=6m, PrintTime=0.1m, g1)"
 
 In the above code, [folder+"buck.psimsch"] specifies the path to the PSIM schematic file, [folder+"buck.smv"] specifies the path to the Simview file, and [TotalTime=6m] and [PrintTime=0.1m] are simulation options. [g1] contains all the waveform information.
 
