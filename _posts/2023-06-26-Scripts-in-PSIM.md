@@ -26,13 +26,13 @@ To run a simulation using a script in PSIM, follow these steps:
 
 2. Define the parameters for your simulation. For example:
 
-```python
+'
 folder = "C:\Users\Fanghao\Documents\ResearchTopic\20230626PSIM\"
 f = 50k  // switching frequency
 Vin = 100
 L = 100u
 C = 1u
-R = 10
+R = 10'
 
 
 
