@@ -16,7 +16,7 @@ The script function in PSIM refers to the capability of writing and executing sc
 
 ## Automation of Buck Converter Simulation
 
-Here is a demonstration of using the script function in automating a buck converter simulation. The compelete tutorial can be found in [help-->Tutorials-->How to use scripts function](#). However, This page shows a simple example of buck converter secenario for the users getting started easily.
+Here is a demonstration of using the script function in automating a buck converter simulation. The complete tutorial can be found in [help-->Tutorials-->How to use scripts function](#). However, this page shows a simple example of a buck converter scenario for users to get started easily.
 
 ## Step 1: Run One Simulation by Script
 
@@ -33,18 +33,15 @@ Vin = 100
 L = 100u
 C = 1u
 R = 10
-'''
-
 
 Use the Simulate function to run the simulation. The syntax for the Simulate function is as follows:
-'''psim
-Simulate(SchematicFilePath, SimviewFilePath, SimulationOptions, ReturnGraph)
-'''
 
-For example: 
-'''psim
+Simulate(SchematicFilePath, SimviewFilePath, SimulationOptions, ReturnGraph)
+
+For example:
+
 Simulate(folder+"buck.psimsch", folder+"buck.smv", TotalTime=6m, PrintTime=0.1m, g1)
-'''
-In the above code, folder+"buck.psimsch" specifies the path to the PSIM schematic file, folder+"buck.smv" specifies the path to the Simview file, and TotalTime=6m and PrintTime=0.1m are simulation options, g1 contains all the waveform information.
+
+In the above code, folder+"buck.psimsch" specifies the path to the PSIM schematic file, folder+"buck.smv" specifies the path to the Simview file, and TotalTime=6m and PrintTime=0.1m are simulation options. g1 contains all the waveform information.
 
 By following these steps and modifying the script to match your specific simulation setup, you can run a simulation using a script in PSIM.
