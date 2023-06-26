@@ -23,20 +23,23 @@ Here is a demonstration of using the script function in automating a buck conver
 To run a simulation using a script in PSIM, follow these steps:
 
 Create a script file by clicking on **Script** in the menu and selecting **Script-Tool**. Define the parameters for your simulation. For example:
-
-"folder = "C:\Users\Fanghao\Documents\ResearchTopic\20230626PSIM\"
+'''psim
+folder = "C:\Users\Fanghao\Documents\ResearchTopic\20230626PSIM\"
 f = 50k  // switching frequency
 Vin = 100
 L = 100u
 C = 1u
-R = 10"
+R = 10
+'''
 
 Use the Simulate function to run the simulation. The syntax for the Simulate function is as follows:
-
-"Simulate(SchematicFilePath, SimviewFilePath, SimulationOptions, ReturnGraph)"
-
+'''psim
+Simulate(SchematicFilePath, SimviewFilePath, SimulationOptions, ReturnGraph)
+'''
 For example:
-"Simulate(folder+"buck.psimsch", folder+"buck.smv", TotalTime=6m, PrintTime=0.1m, g1)"
+'''psim
+Simulate(folder+"buck.psimsch", folder+"buck.smv", TotalTime=6m, PrintTime=0.1m, g1)
+'''
 
 In the above code, [folder+"buck.psimsch"] specifies the path to the PSIM schematic file, [folder+"buck.smv"] specifies the path to the Simview file, and [TotalTime=6m] and [PrintTime=0.1m] are simulation options. [g1] contains all the waveform information.
 
