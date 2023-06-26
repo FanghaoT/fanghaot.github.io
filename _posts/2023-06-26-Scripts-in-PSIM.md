@@ -22,6 +22,8 @@ Here is a demonstration of using the script function in automating a buck conver
 Step1: run one simulation by script
 Create a script file by easily clicking [Script] in the menu, and choose [Script-Tool]. For comanding a simple simulation, all you need to do is to define parameters and then use [Simulate] function.
 
+'''PSIM Script
+
 
 
 
