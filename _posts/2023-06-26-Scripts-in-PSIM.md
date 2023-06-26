@@ -25,7 +25,7 @@ To run a simulation using a script in PSIM, follow these steps:
 1. Create a script file by clicking on **Script** in the menu and selecting **Script-Tool**.
 2. Define the parameters for your simulation. For example:
 
-    ```psim
+    ```
     folder = "C:\Users\Fanghao\Documents\ResearchTopic\20230626PSIM\"
     f = 50k  // switching frequency
     Vin = 100
@@ -36,13 +36,13 @@ To run a simulation using a script in PSIM, follow these steps:
 
 3. Use the Simulate function to run the simulation. The syntax for the Simulate function is as follows:
 
-    ```psim
+    ```
     Simulate(SchematicFilePath, SimviewFilePath, SimulationOptions, ReturnGraph)
     ```
 
     For example:
 
-    ```psim
+    ```
     Simulate(folder+"buck.psimsch", folder+"buck.smv", TotalTime=6m, PrintTime=0.1m, g1)
     ```
 
