@@ -49,3 +49,6 @@ To run a simulation using a script in PSIM, follow these steps:
     In the above code, `folder+"buck.psimsch"` specifies the path to the PSIM schematic file, `folder+"buck.smv"` specifies the path to the Simview file, and `TotalTime=6m` and `PrintTime=0.1m` are simulation options. `g1` contains all the waveform information.
 
 By following these steps and modifying the script to match your specific simulation setup, you can run a simulation using a script in PSIM.
+
+## Step 2: Run Multiple Simulations by Script
+To be continued
