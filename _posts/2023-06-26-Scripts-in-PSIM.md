@@ -50,6 +50,5 @@ To run a simulation using a script in PSIM, follow these steps:
 
 By following these steps and modifying the script to match your specific simulation setup, you can run a simulation using a script in PSIM.
 
-
-
 ## Step 2: Run Multiple Simulations Simultanously
+To be continued
