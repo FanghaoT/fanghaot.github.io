@@ -33,15 +33,17 @@ Vin = 100
 L = 100u
 C = 1u
 R = 10
+'''
 
 Use the Simulate function to run the simulation. The syntax for the Simulate function is as follows:
 
+'''
 Simulate(SchematicFilePath, SimviewFilePath, SimulationOptions, ReturnGraph)
-
+'''
 For example:
-
+'''
 Simulate(folder+"buck.psimsch", folder+"buck.smv", TotalTime=6m, PrintTime=0.1m, g1)
-
+'''
 In the above code, folder+"buck.psimsch" specifies the path to the PSIM schematic file, folder+"buck.smv" specifies the path to the Simview file, and TotalTime=6m and PrintTime=0.1m are simulation options. g1 contains all the waveform information.
 
 By following these steps and modifying the script to match your specific simulation setup, you can run a simulation using a script in PSIM.
