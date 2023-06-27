@@ -2,7 +2,7 @@
 title: A Demonstration of Script function in PSIM
 author: fanghao
 date: 2023-06-26 21:20:00 +0200
-categories: [Tutorial, Power Electronics]
+categories: [tutorial, power electronics]
 tags: [PSIM, power electronics, simulation]
 ---
 
