@@ -54,7 +54,7 @@ By following these steps and modifying the script to match your specific simulat
 
 ## Step 2: Run Multiple Simulations by Script
 
-The simple way of doing multiple simulations are copying the same code and define the parameters differently, and name the Simview file differently too. In case of too many scenarios are needed, the 'while' function can help. For example if I wish to do the simulations with different 20 different L values.
+The simple way of doing multiple simulations are copying the same code and define the parameters differently, and name the Simview file differently too. In case of too many scenarios are needed, the `while` function can help. For example if I wish to do the simulations with different 20 different `L` values.
 
     ```
     i=0;
@@ -80,6 +80,5 @@ The simple way of doing multiple simulations are copying the same code and defin
 
         i++;
     }
-
     Graphwrite(folder+"combine.smv",g2); //save g2 as the combine.smv
     ```
