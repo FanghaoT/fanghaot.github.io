@@ -113,6 +113,8 @@ PSIM Script can do many analysis. In this demostration, only average and ripple 
     ```
 
 Reference
-[YouTube Video](https://www.youtube.com/watch?v=pwVVyRkuo50)
-Tutorial documents and examples from PSIM
+
+`[1] https://www.youtube.com/watch?v=pwVVyRkuo50`
+
+`[2] Tutorial documents and examples from PSIM`
 
