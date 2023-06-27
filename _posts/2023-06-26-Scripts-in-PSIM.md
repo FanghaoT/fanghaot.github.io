@@ -111,3 +111,5 @@ PSIM Script can do many analysis. In this demostration, only average and ripple 
     file = folder + "output_vout_ripple.txt";
     FileWrite(file, out);                                    // write result to a file
     ```
+
+Reference
