@@ -26,7 +26,7 @@ To run a simulation using a script in PSIM, follow these steps:
 2. Define the parameters for your simulation. For example:
 
     ```
-    folder = "C:\Users\Fanghao\Documents\ResearchTopic\20230626PSIM\"
+    folder = "C:\buck\"
     f = 50k  // switching frequency
     Vin = 100
     L = 100u
@@ -48,8 +48,38 @@ To run a simulation using a script in PSIM, follow these steps:
 
     In the above code, `folder+"buck.psimsch"` specifies the path to the PSIM schematic file, `folder+"buck.smv"` specifies the path to the Simview file, and `TotalTime=6m` and `PrintTime=0.1m` are simulation options. `g1` contains all the waveform information.
 
+    `g1` is an array containing all the waveform information, in my case, 4 voltage waveforms are measured, so `g1 = {Time,Vg1,Vg2,Vin,Vout}`. Getting an index of one variable of the array is easy, such as `g1[0]` means the `time` in this case.
+
 By following these steps and modifying the script to match your specific simulation setup, you can run a simulation using a script in PSIM.
 
 ## Step 2: Run Multiple Simulations by Script
 
-To be continued.
+The simple way of doing multiple simulations are copying the same code and define the parameters differently, and name the Simview file differently too. In case of too many scenarios are needed, the 'while' function can help. For example if I wish to do the simulations with different 20 different L values.
+
+    ```
+    i=0;
+    run = 10; //define number of runs/scenarios
+    g2 = array(run)
+    while(i<run)
+    {
+        L = 10u+i*10u //L varies based on 'i'
+        C = 1u
+        R = 10
+
+        output = "buck"+i+".smv";
+        Simulate(folder+"buck.psimsch", folder+output, TotalTime=6m, PrintTime=0.1m, g1);
+
+        if(i==0)
+        {
+            g2[0]=g1[0]
+        }
+
+        g2[i+1]=g1[1];
+
+        SetCurveName(g2[i+1],"run_"+string(i+1));
+
+        i++;
+    }
+
+    Graphwrite(folder+"combine.smv",g2); //save g2 as the combine.smv
+    ```
