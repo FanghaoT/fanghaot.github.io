@@ -85,17 +85,14 @@ The simple way of doing multiple simulations are copying the same code and defin
 
 ## Step 3: Analyze the waveform
 
-PSIM Script can do many analysis. In this demostration, only average and ripple of output voltage will be analyzed. Suppose `g1 = {Time,Vg1,Vg2,Vin,Vout}` in each simulation
+PSIM Script can do many analysis. In this demostration, only average and ripple of output voltage will be analyzed. Suppose `g1 = {Time,Vg1,Vg2,Vin,Vout}` in each simulation.
 
     ```
     out = Array(0);
     row = SizeOf(g1[0]);                                  // read number of rows
-
     count = 0;
-
 	T = g1[0];                                           // obtain time column
     Vout = g1[4];                                           // obtain iL column
-
     flag=1;
     while (flag==1&&count<row>)
     {
@@ -105,7 +102,6 @@ PSIM Script can do many analysis. In this demostration, only average and ripple 
 		}
         count++;
     }
-
     Vout_mea = Copy(Vout, count, -1); //  Copy from 0.4ms to the end
     V_max = max(Vout_mea);
     V_min = min(Vout_mea);
