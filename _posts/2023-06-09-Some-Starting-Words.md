@@ -3,9 +3,9 @@ title: Some Starting Words
 author: fanghao
 date: 2023-06-09 11:55:00 +0200
 categories: [Start Words]
-tags: [startwords]
+tags: [start words]
 ---
-## S
+
 Having been appearing in this universe for more than 28 years, I have always trying to become someone like Doctor Strange. And this website is for... I'm kidding.
 
 I have been planning for building this website since the begining of my PhD.
