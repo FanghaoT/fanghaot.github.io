@@ -1,7 +1,7 @@
 ---
 title: Some Starting Words
 author: fanghao
-date: 2023-06-09 11:55:00 +0200
+date: 2023-06-09 11:48:05 +0200
 categories: [Start Words]
 tags: [start words]
 ---
