@@ -7,3 +7,5 @@ tags: [startwords]
 ---
 
 I have been planning for building this website since the begining of my PhD. 
+
+Having been appear in this universe for more than 28 years, I have always trying to become someone like Doctor Strange.
