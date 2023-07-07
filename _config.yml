@@ -20,7 +20,7 @@ timezone: Europe/Brussels
 
 title: Fanghao Tian # the main title
 
-tagline: PhD researcher @ KU Leuven & Energyville/Power Electronics Engineer/AI Developer/Design Optimization/Consultant/Critical Thinker/Creative Problem Solver/Nature Enthusiasts# it will display as the sub-title
+tagline: PhD researcher @ KU Leuven & Energyville/Power Electronics Engineer/AI Developer/Design Optimization/Consultant/Critical Thinker/Creative Problem Solver/Nature Enthusiasts#
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
