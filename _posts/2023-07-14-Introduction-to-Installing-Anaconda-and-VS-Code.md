@@ -7,8 +7,6 @@ tags: [Python]
 ---
 
 
-# Introduction to Installing Anaconda and VS Code for AI Work
-
 If you're new to AI and machine learning, you may be wondering where to start. Establishing your development environment and starting your AI journey is simple with the right tools and guidance. In this blog post, we'll install Anaconda and VS Code, creating environments, and installing packages, everything you need to start AI work.
 
 ## Anaconda
