@@ -32,11 +32,11 @@ To install VS Code, follow these steps:
 2. Download the installer for your operating system, run it and complete the installation process.
 3. Once you have installed VS Code, you can enhance your coding experience by installing relevant extensions. Some popular extensions for AI work include Python, Jupyter, and Git.
 
-![01](/_posts/2023-07-14-Introduction-to-Installing-Anaconda-and-VS-Code/01.png)
+![01](/_posts/20230714/01.png)
 
 1. Press Ctrl+P or F1 (windows) to open the search box, and then type "> select interpreter". A page will pop up, and then click on "Python: Select Interpreter". Here are all the environments you have created with Python. 
 
-![02](/_posts/2023-07-14-Introduction-to-Installing-Anaconda-and-VS-Code/02.png)
+![02](/_posts/20230714/02.png)
 
 ## Creating Environments and Installing Packages
 
@@ -55,5 +55,4 @@ To create an environment and install packages, there are 2 Choices:
     3. To install the popular machine learning library scikit-learn, for example, you can run `conda install scikit-learn`.
 
 ## Conclusion
-
 In this blog post, we have introduced you to the process of installing Anaconda and Visual Studio Code, creating environments, and installing packages - the essential steps to get started with AI work. By following these instructions, even if you have no prior experience in machine learning, you can set up your environment and begin your journey into the exciting field of AI. Happy coding!
