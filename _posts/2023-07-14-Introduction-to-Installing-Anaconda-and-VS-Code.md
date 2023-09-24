@@ -32,11 +32,11 @@ To install VS Code, follow these steps:
 2. Download the installer for your operating system, run it and complete the installation process.
 3. Once you have installed VS Code, you can enhance your coding experience by installing relevant extensions. Some popular extensions for AI work include Python, Jupyter, and Git.
 
-![01](/_posts/20230714/01.png)
+![01](/commons/20230714/01.png)
 
 1. Press Ctrl+P or F1 (windows) to open the search box, and then type "> select interpreter". A page will pop up, and then click on "Python: Select Interpreter". Here are all the environments you have created with Python. 
 
-![02](/_posts/20230714/02.png)
+![02](/commons/20230714/02.png)
 
 ## Creating Environments and Installing Packages
 
