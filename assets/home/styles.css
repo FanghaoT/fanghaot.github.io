@@ -49,7 +49,8 @@ button { font: inherit; color: inherit; }
 .main-nav { display: flex; align-items: center; gap: 34px; font-size: .78rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
 .main-nav a { position: relative; }
 .main-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -7px; height: 1px; background: var(--blue); transition: right .25s ease; }
-.main-nav a:hover::after { right: 0; }
+.main-nav a:hover::after,
+.main-nav a.active::after { right: 0; }
 .theme-toggle { justify-self: end; width: 58px; height: 30px; display: flex; align-items: center; justify-content: space-around; padding: 3px; border: 1px solid var(--line-strong); border-radius: 99px; background: transparent; cursor: pointer; }
 .theme-toggle span { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; font-size: .8rem; }
 .theme-toggle .sun { background: var(--ink); color: var(--paper); }
@@ -131,6 +132,8 @@ html[data-theme="dark"] .theme-toggle .moon { background: var(--ink); color: var
 .state{position:absolute;width:52px;height:52px;display:grid;place-items:center;border:1px solid var(--blue);border-radius:50%;background:var(--paper);font-family:var(--mono);font-size:.65rem}.s1{left:12%;top:54%}.s2{left:42%;top:22%}.s3{right:10%;top:50%}.route{position:absolute;height:1px;background:var(--blue);transform-origin:left}.r1{left:25%;top:54%;width:29%;transform:rotate(-32deg)}.r2{left:54%;top:40%;width:30%;transform:rotate(27deg)}
 
 .notes-section .section-heading.horizontal > p { align-self: end; }
+.notes-heading-action { display: grid; justify-items: end; gap: 18px; max-width: 430px; }
+.notes-heading-action p { margin: 0; color: var(--muted); }
 .notes-list { border-top: 1px solid var(--line-strong); }
 .note-row { display: grid; grid-template-columns: 140px 1fr auto; gap: 30px; align-items: center; padding: 30px 8px; border-bottom: 1px solid var(--line); transition: padding .25s ease, background .25s ease; }.note-row:hover { padding-left: 18px; padding-right: 18px; background: var(--card); }.note-row time { color: var(--muted); font-family: var(--mono); font-size: .65rem; }.note-row span { color: var(--blue); font-family: var(--mono); font-size: .56rem; letter-spacing: .06em; text-transform: uppercase; }.note-row h3 { margin: 5px 0 0; font-family: var(--serif); font-size: clamp(1.25rem, 2.3vw, 2rem); font-weight: 400; line-height: 1.15; }.note-row b { color: var(--blue); font-weight: 400; }
 

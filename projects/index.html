@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Selected open-source projects by Fanghao Tian in power electronics, optimization, and artificial intelligence." />
+    <title>Projects — Fanghao Tian</title>
+    <link rel="stylesheet" href="/assets/home/styles.css" />
+    <link rel="stylesheet" href="/assets/home/listing.css" />
+    <script src="/assets/home/script.js" defer></script>
+    <script src="/projects/catalog.js" defer></script>
+    <script src="/assets/home/listing.js" defer></script>
+  </head>
+  <body class="listing-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Fanghao Tian home"><span class="brand-mark" aria-hidden="true">FT</span><span>Fanghao Tian</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+        <a href="/#research">Research</a><a class="active" href="/projects/" aria-current="page">Projects</a><a href="/notes/">Notes</a><a href="/#about">About</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme"><span class="sun" aria-hidden="true">&#9788;</span><span class="moon" aria-hidden="true">&#9680;</span></button>
+    </header>
+
+    <main id="main">
+      <section class="listing-header section-shell">
+        <a class="back-link" href="/">← Back to home</a>
+        <div class="listing-title-row">
+          <h1>Project <em>library.</em></h1>
+          <div><p>A curated view of open-source work across converter design, computational intelligence, and engineering tools.</p><div class="listing-total"><strong data-result-count>10</strong><span>projects shown</span></div></div>
+        </div>
+      </section>
+
+      <section class="listing-content section-shell" aria-label="Project library">
+        <div class="listing-tools">
+          <div class="filter-list" aria-label="Filter projects by topic">
+            <button class="filter-button active" type="button" data-filter="all">All</button>
+            <button class="filter-button" type="button" data-filter="power-electronics">Power electronics</button>
+            <button class="filter-button" type="button" data-filter="optimization">Optimization</button>
+            <button class="filter-button" type="button" data-filter="ai-ml">AI / ML</button>
+            <button class="filter-button" type="button" data-filter="tools">Tools</button>
+          </div>
+          <label class="listing-search"><span class="sr-only">Search projects</span><input type="search" placeholder="Search projects" data-list-search /></label>
+        </div>
+        <div class="project-library" data-catalog></div>
+        <noscript><p class="empty-state visible">Enable JavaScript to view the complete project library.</p></noscript>
+        <p class="empty-state" data-empty-state>No projects match this search yet.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="section-shell footer-inner"><div><strong>Fanghao Tian</strong><span>Power Electronics · AI · Optimization</span></div><p>Open work, organized by idea.</p><a href="#main">Back to top →</a></div></footer>
+  </body>
+</html>
