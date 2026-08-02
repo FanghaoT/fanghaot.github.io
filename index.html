@@ -1,4 +1,215 @@
----
-layout: home
-# Index page
----
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fanghao Tian — research in power electronics, artificial intelligence, and optimization." />
+    <title>Fanghao Tian — Research & Engineering</title>
+    <link rel="stylesheet" href="/assets/home/styles.css" />
+    <script src="/assets/home/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Fanghao Tian home">
+        <span class="brand-mark" aria-hidden="true">FT</span>
+        <span>Fanghao Tian</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#notes">Notes</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">
+        <span class="sun" aria-hidden="true">☼</span>
+        <span class="moon" aria-hidden="true">◐</span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero section-shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> PhD researcher · Power electronics</p>
+          <h1>Engineering intelligence for <em>power electronics.</em></h1>
+          <p class="hero-intro">
+            I explore how artificial intelligence can make power electronic systems more efficient, reliable, and autonomous.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore selected work <span>↘</span></a>
+            <a class="button text" href="#notes">Read technical notes <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Abstract visualization of optimization and power electronics">
+          <div class="visual-grid"></div>
+          <div class="visual-label top">SYSTEM / 01</div>
+          <div class="visual-label bottom">OPTIMIZE → VALIDATE → DEPLOY</div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="core">
+            <span class="core-dot"></span>
+            <strong>f(x)</strong>
+            <small>minimize</small>
+          </div>
+          <div class="signal signal-one"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="signal signal-two"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="data-card card-a"><span>η</span><strong>98.4%</strong><small>efficiency</small></div>
+          <div class="data-card card-b"><span>Δ</span><strong>−24%</strong><small>design loss</small></div>
+          <div class="node node-a"></div><div class="node node-b"></div><div class="node node-c"></div>
+        </div>
+      </section>
+
+      <section class="statement-band">
+        <div class="section-shell statement-inner">
+          <p>Research at the intersection of</p>
+          <div class="statement-topics">
+            <span>Power conversion</span><i>×</i><span>Computational intelligence</span><i>×</i><span>Engineering design</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="section-shell section-block">
+        <div class="section-heading reveal">
+          <p class="section-index">01 / Research</p>
+          <h2>Three connected<br />lines of inquiry.</h2>
+          <p>From physical systems to algorithms, each area informs the others.</p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-card reveal">
+            <div class="research-number">01</div>
+            <div class="research-icon circuit-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h3>Power Electronics</h3>
+            <p>High-frequency converters, modulation strategies, and compact, efficient power architectures.</p>
+            <ul><li>Converter design</li><li>Modulation</li><li>Digital twins</li></ul>
+          </article>
+          <article class="research-card reveal">
+            <div class="research-number">02</div>
+            <div class="research-icon network-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <h3>Artificial Intelligence</h3>
+            <p>Physics-aware learning, predictive control, and data-driven models grounded in engineering reality.</p>
+            <ul><li>PINNs</li><li>Reinforcement learning</li><li>Predictive control</li></ul>
+          </article>
+          <article class="research-card reveal">
+            <div class="research-number">03</div>
+            <div class="research-icon curve-icon" aria-hidden="true"><span></span></div>
+            <h3>Optimization</h3>
+            <p>Single- and multi-objective methods for navigating complex engineering trade-offs.</p>
+            <ul><li>PSO & GA</li><li>NSGA-II</li><li>Design automation</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <div class="section-shell section-block">
+          <div class="section-heading horizontal reveal">
+            <div><p class="section-index">02 / Selected projects</p><h2>Ideas made testable.</h2></div>
+            <a class="arrow-link" href="https://github.com/FanghaoT" target="_blank" rel="noreferrer">View GitHub <span>↗</span></a>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card featured reveal">
+              <div class="project-topline"><span>Open source toolkit</span><span>2026</span></div>
+              <div class="project-art optimization-art" aria-hidden="true">
+                <div class="pareto-line"></div>
+                <span class="particle p1"></span><span class="particle p2"></span><span class="particle p3"></span><span class="particle p4"></span><span class="particle p5"></span>
+                <div class="axis x-axis"></div><div class="axis y-axis"></div>
+              </div>
+              <div class="project-content">
+                <div class="project-tags"><span>Optimization</span><span>Python</span><span>NSGA-II</span></div>
+                <h3>OptimizationAlgorithm</h3>
+                <p>A readable toolkit spanning PSO, genetic algorithms, differential evolution, simulated annealing, and multi-objective optimization.</p>
+                <a href="https://github.com/FanghaoT/OptimizationAlgorithm" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-topline"><span>Research code</span><span>Active</span></div>
+              <div class="project-art pinn-art" aria-hidden="true">
+                <div class="converter"><b></b><b></b><b></b><b></b></div>
+                <div class="wave wave-a"></div><div class="wave wave-b"></div>
+              </div>
+              <div class="project-content">
+                <div class="project-tags"><span>PINN</span><span>SIMO converter</span></div>
+                <h3>Physics-informed Modulation</h3>
+                <p>Learning converter behavior while preserving physical structure and system constraints.</p>
+                <a href="https://github.com/FanghaoT/PINN_modulation_SIMO_converter" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-topline"><span>Learning series</span><span>12 notes</span></div>
+              <div class="project-art rl-art" aria-hidden="true">
+                <div class="state s1">S₀</div><div class="state s2">S₁</div><div class="state s3">S₂</div>
+                <span class="route r1"></span><span class="route r2"></span>
+              </div>
+              <div class="project-content">
+                <div class="project-tags"><span>AI</span><span>Control</span><span>Python</span></div>
+                <h3>Reinforcement Learning Notes</h3>
+                <p>Practical explanations from tabular Q-learning through PPO and continuous-control methods.</p>
+                <a href="#notes">Browse the series <span>↓</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="notes" class="section-shell section-block notes-section">
+        <div class="section-heading horizontal reveal">
+          <div><p class="section-index">03 / Latest notes</p><h2>Working in public.</h2></div>
+          <p>Technical writing on algorithms, engineering systems, and the ideas connecting them.</p>
+        </div>
+
+        <div class="notes-list">
+          <a class="note-row reveal" href="https://fanghaot.github.io/posts/From-PSO-to-NSGA-II-Building-an-Optimization-Algorithm-Toolkit/" target="_blank" rel="noreferrer">
+            <time datetime="2026-08-01">01.08.2026</time>
+            <div><span>Optimization · Python</span><h3>From PSO to NSGA-II — Building an Optimization Algorithm Toolkit</h3></div>
+            <b>↗</b>
+          </a>
+          <a class="note-row reveal" href="https://fanghaot.github.io/posts/PPO-Proximal-Policy-Optimization/" target="_blank" rel="noreferrer">
+            <time datetime="2024-03-22">22.03.2024</time>
+            <div><span>Reinforcement learning</span><h3>PPO — Proximal Policy Optimization</h3></div>
+            <b>↗</b>
+          </a>
+          <a class="note-row reveal" href="https://fanghaot.github.io/posts/Advanced-Topics-Dyna-Q-and-Curiosity-Driven-Learning/" target="_blank" rel="noreferrer">
+            <time datetime="2024-03-29">29.03.2024</time>
+            <div><span>AI · Exploration</span><h3>Advanced Topics — Dyna-Q and Curiosity-Driven Learning</h3></div>
+            <b>↗</b>
+          </a>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="section-shell about-grid">
+          <div class="about-monogram reveal" aria-hidden="true"><span>FT</span><i></i><i></i><i></i></div>
+          <div class="about-copy reveal">
+            <p class="section-index">04 / About</p>
+            <h2>Curiosity, translated into engineering.</h2>
+            <p>I obtained my PhD from KU Leuven and EnergyVille in Belgium in 2025. My work brings together power electronics, computational intelligence, and design optimization—with an emphasis on methods that remain useful outside the lab. I now work in the power electronics industry as a postdoctoral researcher, solving design challenges ranging from high-voltage systems to high-power-density power converters.</p>
+            <div class="about-links">
+              <a href="mailto:fanghao.tian@kuleuven.be">Email <span>↗</span></a>
+              <a href="https://github.com/FanghaoT" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-inner">
+        <div><strong>Fanghao Tian</strong><span>Power Electronics · AI · Optimization</span></div>
+        <p>Designed for ideas that need room to breathe.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
