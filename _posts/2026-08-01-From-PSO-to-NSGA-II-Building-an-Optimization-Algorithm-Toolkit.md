@@ -1,118 +1,53 @@
 ---
-title: From PSO to NSGA-II - Building an Optimization Algorithm Toolkit
+title: Heuristic Optimization Algorithms - A Code-First Learning Series
 author: fanghao
 date: 2026-08-01 15:30:00 +0200
 categories: [Optimization]
-tags: [optimization, pso, genetic-algorithm, differential-evolution, simulated-annealing, nsga-ii, python]
+tags: [optimization, heuristic-algorithms, python]
 ---
 
-My [OptimizationAlgorithm](https://github.com/FanghaoT/OptimizationAlgorithm) repository started as a small Particle Swarm Optimization experiment. I have now rebuilt it as a compact Python toolkit covering both single-objective and multi-objective optimization.
+Heuristic optimization is not one algorithm. It is a family of search strategies with different assumptions, operators, strengths, and failure modes. This series therefore gives each algorithm its own article and its own readable Python implementation instead of compressing everything into a single survey.
 
-The goal is educational: keep the implementation readable enough to study, while providing consistent interfaces, deterministic experiments, useful examples, and tests.
+All code lives in the [OptimizationAlgorithm repository](https://github.com/FanghaoT/OptimizationAlgorithm). The implementations share explicit bounds, minimization semantics, seeded NumPy random generators, result objects, and automated tests, so the algorithms can be studied and compared without unrelated interface differences.
 
-## What is included?
+## Series map
 
-| Family | Algorithm | Best suited to |
-|---|---|---|
-| Swarm intelligence | Particle Swarm Optimization (PSO) | Smooth or moderately multimodal continuous problems |
-| Evolutionary | Genetic Algorithm (GA) | Flexible population search and custom operators |
-| Evolutionary | Differential Evolution (DE) | Robust continuous parameter optimization |
-| Trajectory-based | Simulated Annealing (SA) | Small problems where occasional uphill moves help escape local optima |
-| Multi-objective | NSGA-II | Approximating a diverse Pareto front |
+| # | Algorithm | Central idea | Article | Implementation |
+|---|---|---|---|---|
+| 1 | Particle Swarm Optimization (PSO) | Learn from personal and swarm experience | [Read the PSO article]({% post_url 2026-08-02-Particle-Swarm-Optimization-From-Velocity-to-Convergence %}) | [`pso.py`](https://github.com/FanghaoT/OptimizationAlgorithm/blob/main/optimization_algorithms/pso.py) |
+| 2 | Genetic Algorithm (GA) | Evolve a population through selection and variation | [Read the GA article]({% post_url 2026-08-02-Genetic-Algorithm-Selection-Crossover-and-Mutation %}) | [`ga.py`](https://github.com/FanghaoT/OptimizationAlgorithm/blob/main/optimization_algorithms/ga.py) |
+| 3 | Differential Evolution (DE) | Use population differences as search directions | [Read the DE article]({% post_url 2026-08-02-Differential-Evolution-Simple-Operators-Strong-Search %}) | [`de.py`](https://github.com/FanghaoT/OptimizationAlgorithm/blob/main/optimization_algorithms/de.py) |
+| 4 | Simulated Annealing (SA) | Escape local optima by accepting controlled uphill moves | [Read the SA article]({% post_url 2026-08-02-Simulated-Annealing-Escaping-Local-Optima %}) | [`sa.py`](https://github.com/FanghaoT/OptimizationAlgorithm/blob/main/optimization_algorithms/sa.py) |
+| 5 | NSGA-II | Preserve a diverse set of Pareto-optimal trade-offs | [Read the NSGA-II article]({% post_url 2026-08-02-NSGA-II-From-One-Best-Solution-to-a-Pareto-Front %}) | [`nsga2.py`](https://github.com/FanghaoT/OptimizationAlgorithm/blob/main/optimization_algorithms/nsga2.py) |
 
-All implementations use minimization semantics and explicit bounds. A fixed random seed makes comparisons reproducible.
+## A shared experimental interface
 
-## A common single-objective interface
-
-An objective is simply a Python function that maps a decision vector to one scalar:
+The four single-objective algorithms accept the same objective and bounds:
 
 ```python
 from optimization_algorithms import ParticleSwarmOptimizer
 from optimization_algorithms.benchmarks import rastrigin
 
-optimizer = ParticleSwarmOptimizer(
-    population_size=60,
-    iterations=200,
-    seed=42,
-)
+optimizer = ParticleSwarmOptimizer(seed=42)
+result = optimizer.minimize(rastrigin, [(-5.12, 5.12)] * 5)
 
-result = optimizer.minimize(
-    rastrigin,
-    bounds=[(-5.12, 5.12)] * 5,
-)
-
-print(result.x)       # best decision vector
-print(result.fun)     # best objective value
-print(result.history) # convergence history
+print(result.x)
+print(result.fun)
+print(result.history)
 ```
 
-The same objective and bounds can be passed to GA, DE, or SA. This makes it straightforward to compare methods without rewriting the optimization problem.
+Replace `ParticleSwarmOptimizer` with `GeneticAlgorithm`, `DifferentialEvolution`, or `SimulatedAnnealing` to keep the problem fixed while changing the search strategy. NSGA-II uses the same bounds convention but returns decision vectors and objective vectors for a non-dominated set.
 
-## Why add multiple algorithms?
+## What each article contains
 
-No optimizer is universally best. Their search behavior differs:
+Each article follows the same structure:
 
-- **PSO** shares information through personal and global best positions. It is intuitive and often converges quickly, but population diversity can collapse.
-- **GA** combines selection, crossover, and mutation. Its operator-based structure is highly adaptable, especially when a problem needs a custom representation.
-- **DE** creates trial vectors from differences between population members. It is simple and particularly effective for many continuous problems.
-- **SA** maintains one solution and sometimes accepts a worse move. This controlled randomness can help it cross local barriers with little memory overhead.
+1. the intuition behind the algorithm;
+2. the update rules or genetic operators;
+3. a guided reading of the repository implementation;
+4. a runnable benchmark example;
+5. parameter choices, common failure modes, and suitable use cases.
 
-The repository includes Sphere, Rastrigin, and Rosenbrock benchmark functions so the algorithms can be tested on problems with different landscapes.
+The goal is not to declare a universal winner. It is to make the behavior of each method understandable enough that an optimizer can be chosen, tuned, and debugged deliberately.
 
-## Moving from one objective to many
-
-Engineering design rarely has only one goal. A converter design, for example, may need to balance efficiency, power density, cost, thermal stress, and reliability. These objectives often conflict, so there is no single solution that is best in every respect.
-
-A solution is **Pareto dominant** when it is no worse in every objective and strictly better in at least one. The set of solutions not dominated by any other solution forms the **Pareto front**. Instead of returning one point, a multi-objective optimizer returns a set of trade-off candidates for the designer to examine.
-
-## NSGA-II in the toolkit
-
-The NSGA-II implementation follows four central ideas:
-
-1. Rank candidates using non-dominated sorting.
-2. Estimate local solution density with crowding distance.
-3. Prefer low-rank and less-crowded candidates in tournament selection.
-4. Combine parents and offspring before selecting the next generation, preserving strong solutions.
-
-For continuous variables, the implementation uses simulated binary crossover and polynomial mutation.
-
-```python
-from optimization_algorithms import NSGA2
-from optimization_algorithms.benchmarks import zdt1
-
-optimizer = NSGA2(
-    population_size=100,
-    generations=200,
-    seed=42,
-)
-
-result = optimizer.minimize(
-    zdt1,
-    bounds=[(0.0, 1.0)] * 30,
-)
-
-print(result.x.shape)   # non-dominated decision vectors
-print(result.fun.shape) # corresponding objective values
-```
-
-ZDT1 is included as a first validation problem because its two-objective Pareto front is easy to visualize and compare.
-
-## Reliability improvements
-
-The expanded repository is more than a collection of scripts. It now includes:
-
-- input and bound validation;
-- dedicated result objects;
-- reproducible NumPy random generators;
-- convergence histories;
-- runnable examples;
-- unit tests for convergence, deterministic runs, invalid inputs, and NSGA-II non-domination;
-- packaging through `pyproject.toml`.
-
-These details matter when an algorithm moves from a notebook experiment into a reusable engineering workflow.
-
-## What comes next?
-
-The next steps are constraint-handling strategies, mixed discrete-continuous variables, Pareto-front quality indicators such as hypervolume and IGD, and additional algorithms such as CMA-ES, MOEA/D, and Multi-Objective PSO.
-
-The complete source, examples, and installation instructions are available in the [OptimizationAlgorithm repository](https://github.com/FanghaoT/OptimizationAlgorithm).
+Future additions will extend this index with CMA-ES, MOPSO, MOEA/D, constraint handling, and mixed discrete-continuous optimization.
